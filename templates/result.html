@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate result</title>
+    <style>
+        .con{
+            background: url("images/bg.jpg") center center/cover no-repeat;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            top: 0; left: 0; bottom: 0; right: 0;
+        }
+        .card{
+            background-color: rgba(0 ,87, 97, 0.9);
+            border-radius: 10px;
+            width: 64%;
+            
+            text-align: center;
+            margin: 100px auto;
+            padding: 40px;
+
+
+        }
+        .show{
+            color: azure;
+            font-size: large;
+            font-family:tahoma, Arial, Helvetica, sans-serif;
+        }
+        .ru{
+            margin: 10px auto;
+
+        }
+        .btn-submit {
+            display: block;
+            margin-top: 32px;
+            width: 100%;
+            line-height: 50px;
+            font-family: inherit;
+            background: #00ad5f;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            text-transform: capitalize;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            -webkit-transition: all 0.4s ease;
+            -o-transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+}
+
+        .btn-submit:hover {
+            background: #00994b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="card">
+            <form method="POST" action="/back">
+                <div  class="ru">
+                    {% if convert %}
+                        <p class="show">Playlist length if speed normal = {{convert}} </p>
+                        <p class="show">Playlist length if speed x1.25 = {{convert/1.25}} </p>
+                        <p class="show">Playlist length if speed x1.5 = {{convert/1.5}} </p>
+                        <p class="show">Playlist length if speed x2 = {{convert/2}} </p>
+                        
+                        
+                    {% endif %}
+                </div>
+                <input type="submit" value="Another Result" class="btn-submit" >
+            </form>
+        </div>
+    </div>
+</body>
+</html>
